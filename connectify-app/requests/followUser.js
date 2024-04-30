@@ -8,8 +8,8 @@ async function followUser(id) {
             "followerToken": token,
             "followedID": id,
         }
-        const response = await fetch(
-            `${api_url}:8080/users/follow`,{
+        return await fetch(
+            `${api_url}:8080/users/follow`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -17,7 +17,6 @@ async function followUser(id) {
                 },
                 body: JSON.stringify(data),
             });
-        return response;
     } catch (error) {
         console.error(error + " a");
     }

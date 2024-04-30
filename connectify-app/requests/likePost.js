@@ -8,7 +8,7 @@ async function likePost(postID) {
             "postID": postID,
             "token": token,
         }
-        const response = await fetch(
+        await fetch(
             `${api_url}:8080/like`,{
                 method: 'POST',
                 headers: {

@@ -27,7 +27,7 @@ async function uploadImageAsync(uri) {
     });
 
     const fileRef = ref(getStorage(), uuidv4());
-    const result = await uploadBytes(fileRef, blob);
+    await uploadBytes(fileRef, blob);
     blob.close();
     return await getDownloadURL(fileRef);
 }

@@ -8,7 +8,7 @@ async function setPicture(picture) {
             "picture": picture,
             "token": token
         }
-        const response = await fetch(
+        await fetch(
             `${api_url}:8080/users/setpic`,{
                 method: 'POST',
                 headers: {
