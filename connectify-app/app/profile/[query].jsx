@@ -53,7 +53,6 @@ const Profile = () => {
 
     const logout = () => {
         AsyncStorage.removeItem("token");
-        router.dismissAll();
         setLoggedIn(false);
         setUser(null);
         router.replace("");
@@ -95,7 +94,7 @@ const Profile = () => {
         setFollowing(!following);
     }
 
-    if (isLoading || profileUser === null || profileUser === undefined) {
+    if (isLoading || profileUser === null || profileUser === undefined || user.id == null) {
         return (
             <SafeAreaView className="bg-primary h-full w-full items-center">
                 <Text className="text-white">Loading please wait...</Text>
@@ -115,7 +114,7 @@ const Profile = () => {
                 <View className="items-center w-full mb-6">
                     <TouchableOpacity
                         className="items-start absolute top-0 left-0"
-                        onPress={() => {router.dismissAll(); router.navigate("home");}}>
+                        onPress={() => {router.replace("home");}}>
                         <Icon color="white" size={52} name={"arrow-left"} />
                     </TouchableOpacity>
                     <View>

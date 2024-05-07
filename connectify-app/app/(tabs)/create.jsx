@@ -72,7 +72,6 @@ export default class Create extends React.Component {
                         <View className="w-full mt-4">
                             <View className="h-[100px] w-full bg-black-100 px-1">
                                 <TextInput
-                                    editable={true}
                                     multiline={true}
                                     numberOfLines={3}
                                     maxLength={128}
@@ -80,6 +79,8 @@ export default class Create extends React.Component {
                                     placeholder=" Enter a caption..."
                                     placeholderTextColor="white"
                                     className="font-pregular text-base text-white"
+                                    returnKeyType={ 'done' }
+
                                 />
                             </View>
                         </View>

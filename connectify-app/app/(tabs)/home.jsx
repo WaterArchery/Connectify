@@ -53,7 +53,15 @@ const Home = () => {
                 ListEmptyComponent={() => (
                     <Text className="text-white">Start following someone!</Text>
                 )}
-                refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                        title="Pull to refresh"
+                        tintColor="#fff"
+                        titleColor="#fff"
+                    />
+                }
             />
         </SafeAreaView>
     );

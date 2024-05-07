@@ -10,7 +10,6 @@ const MyProfile = () => {
 
     useEffect(() => {
         return () => {
-            router.dismissAll();
             router.replace("profile/" + user.username);
         };
     }, [true]);

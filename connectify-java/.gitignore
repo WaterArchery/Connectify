@@ -34,3 +34,4 @@ build/
 
 # local env files
 .env*.local
+/src/main/java/me/waterarchery/connectify/database/DatabaseInfo.java

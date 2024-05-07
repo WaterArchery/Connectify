@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {Alert, Image, ScrollView, StatusBar, Text, View} from 'react-native';
+import {Alert, Image, ScrollView, StatusBar, Text} from 'react-native';
 import {SafeAreaView} from "react-native-safe-area-context";
 import {images} from "../../constants";
 import FormField from "../../components/FormField";
@@ -31,6 +31,7 @@ const SignIn = () => {
             setLatestError("Logging in please wait.");
             setErrorColor("text-amber-200");
             const result = await getUserWithCreadiantels(form.username, form.password);
+            console.log(result);
             const mes = result["message"];
             if (mes.includes("successfully")) {
                 setUser(result);

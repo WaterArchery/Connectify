@@ -28,7 +28,7 @@ const TabsLayout = () => {
                     backgroundColor: "#161622",
                     borderTopWidth: 1,
                     borderTopColor: "#232533",
-                    height: 74
+                    height: 94
                 }
             }}>
                 <Tabs.Screen
@@ -49,7 +49,7 @@ const TabsLayout = () => {
                     name="explore"
                     options={{
                         tabBarIcon: ({color, focused}) => (
-                            <TabIcon icon={Icons.bookmark} color={color} focused={focused} name="Explore"/>
+                            <TabIcon icon={Icons.explore} color={color} focused={focused} name="Explore"/>
                         )
                     }}/>
                 <Tabs.Screen
