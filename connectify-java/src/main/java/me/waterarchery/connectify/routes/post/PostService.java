@@ -170,6 +170,8 @@ public class PostService {
         MySQL mySQL = MySQL.getInstance();
         Connection conn = mySQL.getConnection();
         try {
+            // Deleting likes before deleting post
+            LikeService.unlikeAll(id);
             String query = "DELETE FROM posts WHERE id = " + id + " AND user_id = " + "'" + authorID + "';";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.executeUpdate();

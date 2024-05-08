@@ -1,6 +1,5 @@
 package me.waterarchery.connectify.routes.user;
 
-import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletRequest;
 import me.waterarchery.connectify.routes.post.Post;
 import me.waterarchery.connectify.routes.post.PostService;
@@ -15,8 +14,6 @@ import java.util.Optional;
 
 @RestController
 public class UserController {
-
-    Gson gson = new Gson();
 
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getById(@PathVariable long id) {

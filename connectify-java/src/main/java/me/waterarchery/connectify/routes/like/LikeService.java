@@ -91,4 +91,27 @@ public class LikeService {
         }
     }
 
+    public static void unlikeAll(long postID) {
+        MySQL mySQL = MySQL.getInstance();
+        String query = "DELETE FROM likes WHERE post_id = " + "'" + postID + "'";
+        Connection conn = mySQL.getConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.executeUpdate();
+        }
+        catch (SQLException ex) {
+            System.out.println("Something is wrong in unlikeAll()");
+            System.out.println("Query: " + query);
+            System.out.println("Exception: " + ex.getMessage());
+        }
+        finally {
+            try {
+                if (conn != null) conn.close();
+            }
+            catch (SQLException ex) {
+                System.out.println("Something is wrong in closing connection");
+            }
+        }
+    }
+
 }

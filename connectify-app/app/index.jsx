@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView} from "react-native-safe-area-context";
-import {Image, Text, ScrollView, StatusBar, View, FlatList} from "react-native";
+import {Image, Text, ScrollView, StatusBar, View} from "react-native";
 import {images} from "../constants";
 import CustomButton from "../components/CustomButton";
 import {Redirect, router} from "expo-router";
@@ -19,8 +19,10 @@ export default function App() {
                     <Image source={images.logo} className="h-[150px] w-full" tintColor="white" resizeMode="contain"/>
                     <View className="relative items-center">
                         <Image source={currentImage} className="max-w-[380px] h-[300px]" resizeMode="contain"/>
-                        <Text className="text-3xl font-bold text-white text-center">{currentText} <Text className="text-secondary-200">Connectify</Text> </Text>
-                        <Image source={images.path} className="w-[236px] h-[25px] absolute -bottom-5 -right-0" resizeMode="contain"/>
+                        <Text className="text-3xl font-bold text-white text-center">
+                            {currentText}
+                            <Text className="text-secondary-200">Connectify</Text>
+                        </Text>
                     </View>
                     <Text className="mt-12 text-sm font-pregular text-gray-100 text-center">Effortlessly upload,
                         share, and connect through photos.

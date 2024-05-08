@@ -39,6 +39,7 @@ const Profile = () => {
     }
 
     const loadProfile = async () => {
+        setRefreshing(true);
         const profileUser = await getProfile(query === undefined ? user.username : query);
         if (profileUser.followers !== null && profileUser.followers !== undefined) {
             profileUser.followers.forEach((element) => {
@@ -49,13 +50,14 @@ const Profile = () => {
         }
         setProfileUser(profileUser);
         setPosts(profileUser.posts.reverse());
+        setRefreshing(false);
     };
 
     const logout = () => {
+        router.replace("");
         AsyncStorage.removeItem("token");
         setLoggedIn(false);
         setUser(null);
-        router.replace("");
     }
 
     const changeProfilePicture = () => {
