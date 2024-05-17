@@ -14,6 +14,7 @@ export default function App() {
 
     return (
         <SafeAreaView className="bg-primary">
+            <StatusBar style="light"/>
             <ScrollView contentContainerStyle={{height: '100%'}}>
                 <View className="items-center justify-center content-center">
                     <Image source={images.logo} className="h-[150px] w-full" tintColor="white" resizeMode="contain"/>
@@ -36,7 +37,6 @@ export default function App() {
                         isBoldFont={true}
                     />
 
-                    <StatusBar style="light"/>
                 </View>
             </ScrollView>
         </SafeAreaView>

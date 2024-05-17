@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {StatusBar, Text, View} from 'react-native';
 import {Redirect, Stack} from "expo-router";
 import {useGlobalContext} from "../../context/Provider";
 
