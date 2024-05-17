@@ -95,6 +95,7 @@ public class LikeService {
         MySQL mySQL = MySQL.getInstance();
         String query = "DELETE FROM likes WHERE post_id = " + "'" + postID + "'";
         Connection conn = mySQL.getConnection();
+
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.executeUpdate();
